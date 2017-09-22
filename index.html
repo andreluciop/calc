@@ -47,27 +47,29 @@
                 <td><input type="button" onclick="addToDisplay(7)" value="7"></td>
                 <td><input type="button" onclick="addToDisplay(8)" value="8"></td>
                 <td><input type="button" onclick="addToDisplay(9)" value="9"></td>
-                <td><input type="button" onclick="addToDisplay(/)" value="/"></td>
-								<td><input type="button" onclick="addToDisplay(%)" value="%"></td>
+                <td><input type="button" onclick="addToDisplay('/')" value="/"></td>
+								<td><input type="button" onclick="addToDisplay('%')" value="%"></td>
 			</tr>
 			<tr>
                 <td><input type="button" onclick="addToDisplay(4)" value="4"></td>
                 <td><input type="button" onclick="addToDisplay(5)" value="5"></td>
                 <td><input type="button" onclick="addToDisplay(6)" value="6"></td>
-                <td><input type="button" onclick="addToDisplay(*)" value="*"></td>
-								<td><input type="button" onclick="addToDisplay(1/x)" value="1/x"></td>
+                <td><input type="button" onclick="addToDisplay('*')" value="*"></td>
+								<td><input type="button" onclick="addToDisplay('1/x')" value="1/x"></td>
 			</tr>
 			<tr>
                 <td><input type="button" onclick="addToDisplay(1)" value="1"></td>
                 <td><input type="button" onclick="addToDisplay(2)" value="2"></td>
                 <td><input type="button" onclick="addToDisplay(3)" value="3"></td>
-                <td><input type="button" onclick="addToDisplay(-)" value="-"></td>
-								<td rowspan="2" style="text-align:center;"><input id="igual" type="button" value="="></td>
+                <td><input type="button" onclick="addToDisplay('-')" value="-"></td>
+								<td rowspan="2" style="text-align:center;">
+									<input id="igual"onclick="doTheMath()"  type="button" value="=">
+								</td>
 			</tr>
 			<tr>
                 <td colspan="2"style="text-align:center;"><input type="button" onclick="addToDisplay(0)" value="0"></td>
-                <td style="text-align:center;"><input type="button" onclick="addToDisplay(,)" value=","></td>
-                <td style="text-align:center;"><input type="button" value="+"></td>
+                <td style="text-align:center;"><input type="button" onclick="addToDisplay(',')" value=","></td>
+                <td style="text-align:center;"><input type="button"  onclick="addToDisplay('+')" value="+"></td>
 			</tr>
         </table>
 		</center>
@@ -78,6 +80,11 @@
 			function addToDisplay(num) {
 				var display = document.getElementById('display');
 				display.value = display.value + num;
+				}
+				function doTheMath(){
+					var display = document.getElementById('display');
+          display.value = eval(display.value);
+
 				}
 		</script>
 		</body>
